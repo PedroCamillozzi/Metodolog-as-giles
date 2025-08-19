@@ -10,7 +10,12 @@
 
         public int Suma(string cadena)
         {
-            return 3;
+            if (string.IsNullOrWhiteSpace(cadena))
+                return 0;
+
+            var numeros = cadena.Split(',');
+
+            return numeros.Sum(n => int.Parse(n));
         }
     }       
 }
